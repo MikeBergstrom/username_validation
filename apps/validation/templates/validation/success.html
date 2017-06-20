@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Username Success</title>
+          {% load staticfiles %}
+        <link rel="stylesheet" type = "text/css" href="{% static '*****/css/main.css' %}"> 
+    </head>
+    <body>
+        <h1>The username you entered {{request.session.username}} is valid. Thank you!</h1>
+        <h3>Usernames entered</h3>
+        <table>
+            {% for users in usernames %}
+                <tr>
+                    <td>{{users.username}}</td>
+                    <td>{{users.created_at}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
